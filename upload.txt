@@ -1,0 +1,9 @@
+FROM ubuntu:18.04
+WORKDIR /app
+COPY . /app
+RUN apt update -y && \
+    apt install python3.8 -y && \
+    apt-get install python-pip -y && \
+    pip install Flask
+EXPOSE 7000
+CMD python /app/app.py
